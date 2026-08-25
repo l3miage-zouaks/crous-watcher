@@ -2,8 +2,8 @@ name: Surveillance logement CROUS
 
 on:
   schedule:
-    # Toutes les 10 minutes (GitHub peut retarder un peu en période de forte charge)
-    - cron: "*/10 * * * *"
+    # Toutes les 5 minutes (GitHub peut retarder un peu en période de forte charge)
+    - cron: "*/5 * * * *"
   workflow_dispatch: {}  # permet de lancer manuellement depuis l'onglet Actions
 
 permissions:
