@@ -38,7 +38,8 @@ jobs:
           if [ -n "$(git status --porcelain state.json)" ]; then
             git add state.json
             git commit -m "Mise à jour de l'état des logements"
-            git push
+            git pull --rebase origin main
+            git push origin main
           else
             echo "Pas de changement d'état à committer."
           fi
