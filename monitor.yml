@@ -1,0 +1,44 @@
+name: Surveillance logement CROUS
+
+on:
+  schedule:
+    # Toutes les 10 minutes (GitHub peut retarder un peu en période de forte charge)
+    - cron: "*/10 * * * *"
+  workflow_dispatch: {}  # permet de lancer manuellement depuis l'onglet Actions
+
+permissions:
+  contents: write  # nécessaire pour committer state.json
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout du repo
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Installer les dépendances
+        run: pip install -r requirements.txt
+
+      - name: Lancer la vérification
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          CROUS_SEARCH_URL: ${{ vars.CROUS_SEARCH_URL }}
+        run: python monitor.py
+
+      - name: Sauvegarder l'état (state.json)
+        run: |
+          git config user.name "crous-watcher-bot"
+          git config user.email "actions@github.com"
+          if [ -n "$(git status --porcelain state.json)" ]; then
+            git add state.json
+            git commit -m "Mise à jour de l'état des logements"
+            git push
+          else
+            echo "Pas de changement d'état à committer."
+          fi
