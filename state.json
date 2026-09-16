@@ -1,12 +1,12 @@
 {
-  "2552": {
-    "name": "FEA",
-    "url": "https://trouverunlogement.lescrous.fr/tools/47/accommodations/2552",
-    "raw_text": "FEA"
-  },
   "2448": {
     "name": "BUGEY",
     "url": "https://trouverunlogement.lescrous.fr/tools/47/accommodations/2448",
     "raw_text": "BUGEY"
+  },
+  "2552": {
+    "name": "FEA",
+    "url": "https://trouverunlogement.lescrous.fr/tools/47/accommodations/2552",
+    "raw_text": "FEA"
   }
 }
