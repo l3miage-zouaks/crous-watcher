@@ -1,22 +1,12 @@
 {
-  "2448": {
-    "name": "BUGEY",
-    "url": "https://trouverunlogement.lescrous.fr/tools/47/accommodations/2448",
-    "raw_text": "BUGEY"
+  "2828": {
+    "name": "BORNES",
+    "url": "https://trouverunlogement.lescrous.fr/tools/47/accommodations/2828",
+    "raw_text": "BORNES"
   },
   "2467": {
     "name": "CARDINIERE",
     "url": "https://trouverunlogement.lescrous.fr/tools/47/accommodations/2467",
     "raw_text": "CARDINIERE"
-  },
-  "2486": {
-    "name": "CHANEY",
-    "url": "https://trouverunlogement.lescrous.fr/tools/47/accommodations/2486",
-    "raw_text": "CHANEY"
-  },
-  "2828": {
-    "name": "BORNES",
-    "url": "https://trouverunlogement.lescrous.fr/tools/47/accommodations/2828",
-    "raw_text": "BORNES"
   }
 }
